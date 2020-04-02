@@ -22,7 +22,8 @@ expenseRouter
     console.log("BODY : ",req.body);
     Expense.create(req.body)
     .then((result) =>{
-        res.json({success : "success"})
+        console.log("Document ID : ",result._id);
+        res.json({success : "success", _id : result._id})
     })
     .catch(err => console.log(err));
 })
